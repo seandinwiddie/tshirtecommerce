@@ -1,0 +1,123 @@
+#cp-tab,
+#pp-tab
+{
+  cursor: pointer;
+  position: absolute;
+  top: -26px;
+  padding: 3px;
+  width: 50px;
+  height: 18px;
+  text-align: center;
+}
+#cp-tab
+{
+  right: -1px;
+}
+#pp-tab
+{
+  right: 56px;
+}
+.inactive-tab
+{
+  background: #ccc;
+  border: solid 1px #f0c49B;
+}
+.active-tab
+{
+  background: #ECECEC;
+  border: solid 1px #f0c49B;
+  border-bottom: solid 1px #ECECEC;
+}
+#pp
+{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #ECECEC;
+}
+.swatch
+{
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  margin: 4px;
+  margin-right:-2px;
+  border: solid 1px #d0d0d0;
+  background: white;
+  overflow: hidden;
+}
+.swatch-hover
+{
+  cursor: pointer;
+}
+.selected-swatch,
+.swatch-hover:hover
+{
+  border-color: orange;
+}
+.swatch-disabled:before
+{
+  position: absolute;
+  display: table;
+  opacity: 0.75;
+  height: 22px;
+  width: 22px;
+  content: '';
+  background: #ECECEC;
+  transition-delay: 0.25s;
+}
+.dropdown-color
+{
+  overflow: hidden;
+}
+.dropdown-color .swatch
+{
+  position: relative;
+  top: -16px;
+  margin: -2px;
+}
+#pp a
+{
+  position: absolute;
+  bottom: 7%;
+  font-size: 11px;
+  color: #d93f3f;
+  cursor: pointer;
+}
+.cancel-pattern
+{
+  right: 72px;
+}
+.remove-pattern
+{
+  left: 10px;
+}
+.remove-pattern:not(.disabled)
+{
+  font-size: 13px !important;
+  color: red !important;
+}
+#pp a.remove-pattern.disabled
+{
+  cursor: default;
+  font-size: 11px;
+  color: rgb(184, 184, 184);
+}
+#pp a.remove-pattern.disabled:hover
+{
+  text-decoration: none;
+}
+#pp button
+{
+  position: absolute;
+  bottom: 4%;
+  right: 10px;
+}
+.sp-palette-container
+{
+  border-right: none !important;
+}
+.sp-picker-container
+{
+  border-left: none !important;
+}
