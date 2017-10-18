@@ -4198,9 +4198,12 @@ var design = {
                 if (item.change_color == 1)
                 {
                     var colors = design.svg.getColors(e.children('svg'));
-                    for ( var color in colors )
+                    for ( var color in colors ) // For the Pattern Chooser
                     {
-                      if ( colors[ color ][ 0 ].hasAttribute( 'data-of-pattern' ) )
+                      if // ../addons/js/pattern-chooser.js line 320
+                      (
+                        colors[ color ][ 0 ].hasAttribute( 'data-of-pattern' )
+                      )
                       {
                         delete colors[ color ];
                       }
@@ -4235,6 +4238,15 @@ var design = {
                         //	jQuery.data(a, 'colors', color);
                         //	a.innerHTML = '<span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>';
                         //	div.append(a);
+                        if // For the Pattern Chooser
+                        (
+                          jQuery( colors[ color ][ 0 ] )
+                            .attr( 'fill' ).includes( 'url' ) 
+                        )
+                        {
+                          color = jQuery( colors[ color ][ 0 ] )
+                            .attr( 'data-color' );
+                        }
                         if (color == 'none')
                             continue;
                         c.push(color);
